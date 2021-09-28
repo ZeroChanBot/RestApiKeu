@@ -1,22 +1,836 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport" />
-      <title>ZEROGANS API's</title>
-      <!-- General CSS Files -->
-      <link rel="stylesheet" href="https://h4ck3rs404-api.herokuapp.com/assets/css/app.min.css" />
-      <!-- Template CSS -->
-      <link rel="stylesheet" href="https://h4ck3rs404-api.herokuapp.com/assets/css/style.css" />
-      <link rel="stylesheet" href="https://h4ck3rs404-api.herokuapp.com/assets/css/components.css" />
-      <!-- Custom style CSS -->
-      <link rel="stylesheet" href="https://h4ck3rs404-api.herokuapp.com/assets/css/custom.css" />
-      <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/cyM9YyH/logoku.jpg" />
 
-   </head>
-   
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Rest API - Raku Senju</title>
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!--- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"> --->
+<link rel="stylesheet" href="https://h4ck3rs404-api.herokuapp.com/assets/css/style.css" />
+<link rel="stylesheet" href="https://h4ck3rs404-api.herokuapp.com/assets/css/components.css" />
+  <link href="css/ruang-admin.min.css" rel="stylesheet">
+</head>
+<body id="page-top">
+  <div id="wrapper">
+<!-- Sidebar -->
+<ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="https://zerochanbot.herokuapp.com/docs">
+<div class="sidebar-brand-icon">
+<img src="https://i.ibb.co/cyM9YyH/logoku.jpg">
+</div>
+<div class="sidebar-brand-text mx-3">RakuGans - API</div>
+  </a>
+  <hr class="sidebar-divider my-0">
+  <li class="nav-item active">
+<a class="nav-link" href="https://zerochanbot.herokuapp.com/docs">
+  <i class="fas fa-fw fa-code"></i>
+  <span>Beranda</span></a>
+  </li>
+  <hr class="sidebar-divider">
+  <div class="sidebar-heading">
+API Features
+  </div>
+  <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+  aria-expanded="true" aria-controls="collapseBootstrap">
+  <i class="fas fa-download"></i>
+  <span>Downloader API</span>
+</a>
+<div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Media Features</h6>
+<a class="collapse-item" href="/api/download/fb?url=https://www.facebook.com/alanwalkermusic/videos/277641643524720&apikey=APIKEYMU">Facebook Download</a>
+<a class="collapse-item" href="/api/download/tiktok?url=https://vt.tiktok.com/ZSJhvu1AE/&apikey=APIKEYMU">Tiktok Download</a>
+<a class="collapse-item" href="/api/download/ig?url=https://www.instagram.com/p/CNtpwxuH5NK/?igshid=g26k5coikzwr&apikey=APIKEYMU">Instagram Download</a>
+<a class="collapse-item" href="/api/download/ytmp3?url=https://youtu.be/Nq5rzeJ5Ab4&apikey=APIKEYMU">Youtube MP3 Download</a>
+<a class="collapse-item" href="/api/download/ytmp4?url=https://youtu.be/Nq5rzeJ5Ab4&apikey=APIKEYMU">Youtube MP4 Download</a>
+<a class="collapse-item" href="/api/mediafire?url=http://www.mediafire.com/file/js0gr2nozcmk9yg/example.txt/file&apikey=APIKEYMU">Mediafire Download</a>
+<a class="collapse-item" href="/api/playstore?package=com.whatsapp&apikey=APIKEYMU">Playstore Download</a>
+<a class="collapse-item" href="/api/yt/playmp3?query=Monolog-pamungkas&apikey=APIKEYMU">Youtube MP3</a>
+<a class="collapse-item" href="/api/yt/playmp4?query=Monolog-pamungkas&apikey=APIKEYMU">Youtube MP4</a>
+<h6 class="collapse-header">Sosial Media Features</h6>
+<a class="collapse-item" href="/api/stiker?query=Patrick Star&apikey=APIKEYMU">Sticker Search</a>
+<a class="collapse-item" href="/api/yt/search?query=Monolog-pamungkas&apikey=APIKEYMU">Youtube Searching</a>
+<h6 class="collapse-header">Stalking Features</h6>
+<a class="collapse-item" href="/api/stalk/ig?apikey=APIKEYMU&username=nathanaelhananta">Instagram Stalking</a>
+<a class="collapse-item" href="/api/stalk/tiktok?apikey=APIKEYMU&username=chikakiku">Tiktok Stalking</a>
+<a class="collapse-item" href="/api/stalk/npm?apikey=APIKEYMU&query=zhirrr-api&hostname=zhirrr">Info NPM</a>
+</div>
+</div>
+  </li>
+  
+  <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMusic" aria-expanded="true"
+  aria-controls="collapseMusic">
+  <i class="fas fa-music"></i>
+  <span>Music API</span>
+</a>
+<div id="collapseMusic" class="collapse" aria-labelledby="headingMusic" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Music  API</h6>
+<a class="collapse-item" href="/api/music/joox?apikey=APIKEYMU&query=monolog pamungkas">Joox Download</a>
+<a class="collapse-item" href="/api/music/spotify?apikey=APIKEYMU&query=ignite">Spotify Search</a>
+  <a class="collapse-item" href="/api/music/liriklagu?query=stereo hearts&apikey=APIKEYMU">Search Lirik Lagu</a>
+<a class="collapse-item" href="/api/music/chordlagu?lagu=stereo hearts&apikey=APIKEYMU">Search Chord Lagu</a>
+</div>
+</div>
+  </li>
+  <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseIslamic" aria-expanded="true"
+  aria-controls="collapseIslamic">
+  <i class="fas fa-star-and-crescent"></i>
+  <span>Islamic API</span>
+</a>
+<div id="collapseIslamic" class="collapse" aria-labelledby="headingIslamic" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Islamic Fitur</h6>
+<a class="collapse-item" href="/api/muslim/hadits?kitab=bukhari&nomor=52&apikey=APIKEYMU">Hadits Shahih</a>
+<a class="collapse-item" href="/api/muslim/quran?surah=1&ayat=2&apikey=APIKEYMU">Al Qur'an</a>
+<a class="collapse-item" href="/api/muslim/tahlil?apikey=APIKEYMU">Doa Tahlil</a>
+<a class="collapse-item" href="/api/muslim/wirid?apikey=APIKEYMU">Doa Wirid</a>
+<a class="collapse-item" href="/api/muslim/asmaulhusna?apikey=APIKEYMU">Asmaul Husna</a>
+<a class="collapse-item" href="/api/muslim/doaharian?apikey=APIKEYMU">Doa Harian</a>
+<a class="collapse-item" href="/api/muslim/ayatkursi?apikey=APIKEYMU">Ayat Kursi</a>
+<a class="collapse-item" href="/api/muslim/kisahnabi?nabi=muhammad&apikey=APIKEYMU">Kisah Nabi</a>
+<a class="collapse-item" href="/api/muslim/niatshalat?apikey=APIKEYMU">Niat Shalat</a>
+<a class="collapse-item" href="/api/muslim/bacaanshalat?apikey=APIKEYMU">Bacaan Shalat</a>
+<a class="collapse-item" href="/api/muslim/jadwalshalat?kota=jakartautara&apikey=APIKEYMU">Jadwal Shalat</a>
+  </div>
+</div>
+  </li>
+  <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAsupan" aria-expanded="true"
+  aria-controls="collapseKodepos">
+  <i class="fa fa-coffee"></i>
+  <span>Asupan API</span>
+</a>
+<div id="collapseAsupan" class="collapse" aria-labelledby="headingKodepos" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Asupan Video</h6>
+<a class="collapse-item" href="/api/asupan?apikey=APIKEYMU">Random Asupan</a>
+<a class="collapse-item" href="/api/asupan/santuy?apikey=APIKEYMU">Asupan Santuy</a>
+<a class="collapse-item" href="/api/asupan/tiktok?apikey=APIKEYMU">Asupan TikTok</a>
+<a class="collapse-item" href="/api/asupan/ukhty?apikey=APIKEYMU">Asupan Ukhty </a>
+<a class="collapse-item" href="/api/bokep?apikey=APIKEYMU">Asupan Bokep</a>
+<h6 class="collapse-header">Asupan Image</h6>
+<a class="collapse-item" href="/api/asupan/hijab?apikey=APIKEYMU">Asupan Ukhty</a>
+ <a class="collapse-item" href="/api/asupan/cecan?apikey=APIKEYMU">Asupan Cecan</a>
+ </div>
+</div>
+</li>
+<li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAnime2" aria-expanded="true"
+          aria-controls="collapseAnime2">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>NSFW API</span>
+        </a>
+        <div id="collapseAnime2" class="collapse" aria-labelledby="headingAnime" data-parent="#accordionSidebar">
+          <div class="bg-primary py-2 collapse-inner rounded">
+            <h6 class="collapse-header">NSFW Features</h6>
+            <a class="collapse-item" href="api/nsfw/ntr?apikey=APIKEYMU">Netorare</a>
+            <a class="collapse-item" href="api/nsfw/maid?apikey=APIKEYMU">Maid</a>
+            <a class="collapse-item" href="api/nsfw/uglybastard?apikey=APIKEYMU">Ulgy Bastard</a>
+            <a class="collapse-item" href="api/nsfw/ass?apikey=APIKEYMU">ASS</a>
+            <a class="collapse-item" href="api/nsfw/ahegao?apikey=APIKEYMU">Ahegao</a>
+            <a class="collapse-item" href="api/nsfw/bdsm?apikey=APIKEYMU">BDSM</a>
+            <a class="collapse-item" href="api/nsfw/blowjob?apikey=APIKEYMU">Blowjob</a>
+            <a class="collapse-item" href="api/nsfw/cuckold?apikey=APIKEYMU">Cuckold</a>
+            <a class="collapse-item" href="api/nsfw/cum?apikey=APIKEYMU">Cum</a>
+            <a class="collapse-item" href="api/nsfw/ero?apikey=APIKEYMU">Ero</a>
+            <a class="collapse-item" href="api/nsfw/femdom?apikey=APIKEYMU">Fendom</a>
+            <a class="collapse-item" href="api/nsfw/foot?apikey=APIKEYMU">Foot</a>
+            <a class="collapse-item" href="api/nsfw/gangbang?apikey=APIKEYMU">GangBang</a>
+            <a class="collapse-item" href="api/nsfw/glasses?apikey=APIKEYMU">Glasses</a>
+            <a class="collapse-item" href="api/nsfw/hentai?apikey=APIKEYMU">Hentai</a>
+            <a class="collapse-item" href="api/nsfw/hentaigif?apikey=APIKEYMU">Hentai GIF</a>
+            <a class="collapse-item" href="api/nsfw/jahy?apikey=APIKEYMU">Jahy</a>
+            <a class="collapse-item" href="api/nsfw/masturbation?apikey=APIKEYMU">Masturbation</a>
+            <a class="collapse-item" href="api/nsfw/nsfwNeko?apikey=APIKEYMU">Neko</a>
+            <a class="collapse-item" href="api/nsfw/orgy?apikey=APIKEYMU">Orgy</a>
+            <a class="collapse-item" href="api/nsfw/panties?apikey=APIKEYMU">Panties</a>
+            <a class="collapse-item" href="api/nsfw/pussy?apikey=APIKEYMU">Pussy</a>
+            <a class="collapse-item" href="api/nsfw/thighs?apikey=APIKEYMU">Thighs</a>
+            <a class="collapse-item" href="api/nsfw/yuri?apikey=APIKEYMU">Yuri</a>
+          </div>
+        </div>
+      </li>
+    <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGachaCewe" aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fas fa-fire"></i>
+                    <span>Gacha Cewe</span>
+                </a>
+                <div id="collapseGachaCewe" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                    <div class="bg-primary py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Cecan Features</h6>
+            <a class="collapse-item" href="/api/cewe/vietnam?apikey=APIKEYMU">Cecan Vietnam</a>
+            <a class="collapse-item" href="/api/cewe/malaysia?apikey=APIKEYMU">Cecan Malaysia</a>
+            <a class="collapse-item" href="/api/cewe/korea?apikey=APIKEYMU">Cecan Korea</a>
+            <a class="collapse-item" href="/api/cewe/indonesia?apikey=APIKEYMU">Cecan Indonesia</a>
+            <a class="collapse-item" href="/api/cewe/japan?apikey=APIKEYMU">Cecan Japan</a>
+            <a class="collapse-item" href="/api/cewe/thailand?apikey=APIKEYMU">Cecan Thailand</a>
+            <a class="collapse-item" href="/api/cewe/china?apikey=APIKEYMU">Cecan China</a>
+            </div>
+            </div>
+        </li>
+   <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseWallpaper" aria-expanded="true"
+  aria-controls="collapseKodepos">
+  <i class="fas fa-image"></i>
+  <span>Random Image API</span>
+</a>
+<div id="collapseWallpaper" class="collapse" aria-labelledby="headingKodepos" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Random Image Fitur</h6>
+<a class="collapse-item" href="api/search/image?apikey=APIKEYMU&query=Raku">Search Image</a>
+<a class="collapse-item" href="/api/quotesimage?apikey=APIKEYMU">Quotes Image</a>
+ <a class="collapse-item" href="/api/techno?apikey=APIKEYMU">Wallpaper Teknologi</a>
+<a class="collapse-item" href="/api/progam?apikey=APIKEYMU">Wallpaper Programming</a>
+<a class="collapse-item" href="/api/cyber?apikey=APIKEYMU">Wallpaper CyberSpace</a>
+<a class="collapse-item" href="/api/muslim?apikey=APIKEYMU">Wallpaper Muslim</a>
+<a class="collapse-item" href="/api/gunung?apikey=APIKEYMU">Wallpaper Mountain</a>
+ </div>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSerti" aria-expanded="true"
+  aria-controls="collapseKodepos">
+<i class="far fa-bookmark"></i>
+  <span>Serti API</span>
+</a>
+<div id="collapseSerti" class="collapse" aria-labelledby="headingKodepos" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<a class="collapse-item" href="/api/serti/sertiepep?apikey=APIKEYMU&text=Raku">FF Serti</a>
+ </div>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTambahan" aria-expanded="true"
+  aria-controls="collapseKodepos">
+  <i class="fas fa-fw fa-images"></i>
+  <span>Image Editor API</span>
+</a>
+<div id="collapseTambahan" class="collapse" aria-labelledby="headingKodepos" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Image Edit</h6>
+<a class="collapse-item" href="/api/trigger?apikey=APIKEYMU&url=https://i.ibb.co/cyM9YyH/logoku.jpg">Trigger</a>
+<a class="collapse-item" href="/api/passed?apikey=APIKEYMU&url=https://i.ibb.co/cyM9YyH/logoku.jpg">Passed</a>
+<a class="collapse-item" href="/api/wasted?apikey=APIKEYMU&url=https://i.ibb.co/cyM9YyH/logoku.jpg">Wasted</a>
+<a class="collapse-item" href="/api/meme?apikey=APIKEYMU&text=Raku&text2=Gans&url=https://i.ibb.co/cyM9YyH/logoku.jpg"> Sticker Meme</a>
+<a class="collapse-item" href="/api/fisheye?apikey=APIKEYMU&url=https://i.ibb.co/cyM9YyH/logoku.jpg">Fish Eye</a>
+<a class="collapse-item" href="/api/scary?apikey=APIKEYMU&url=https://i.ibb.co/cyM9YyH/logoku.jpg">Scary Gif</a>
+<a class="collapse-item" href="/api/petir?apikey=APIKEYMU&url=https://i.ibb.co/cyM9YyH/logoku.jpg">Petir </a>
+ </div>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaker" aria-expanded="true"
+  aria-controls="collapseMaker">
+  <i class="fas fa-fw fa-images"></i>
+  <span>Image Maker API</span>
+</a>
+<div id="collapseMaker" class="collapse" aria-labelledby="headingText" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<a class="collapse-item" href="/api/maker/nulis?apikey=APIKEYMU&text=Subscribe ZEROBOT">Nulis Buku</a>
+<a class="collapse-item" href="/api/maker/attp?apikey=APIKEYMU&text=Raku">ATTP</a>
+<a class="collapse-item" href="/api/maker/ttp?apikey=APIKEYMU&text=Raku">TTP</a>
+<a class="collapse-item" href="/api/maker/emoji2png?apikey=APIKEYMU&text=😎">Emoji To Png</a>
+<hr>
+<a class="collapse-item" href="/api/maker/qrcode?apikey=APIKEYMU&text=Raku">Qrcode</a>
+<a class="collapse-item" href="/api/maker/barcode?apikey=APIKEYMU&text=Raku">Barcode</a>
+<a class="collapse-item" href="/api/maker/transformer?apikey=APIKEYMU&text=RakuGans">Transformer Text</a>
+<a class="collapse-item" href="/api/maker/skatch?apikey=APIKEYMU&url=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbmrYfgiRt1lLwNgRMgMbID62qH3EQ2T1c6RUJEQMcoCWKqVVxAg7R_LfM&s=10">Skatch Effect</a>
+<a class="collapse-item" href="/api/maker/harta-tahta?apikey=APIKEYMU&text=Raku">Harta Tahta Maker</a>
+</div>
+</div>
+</li>
+   <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePhotooxy" aria-expanded="true"
+  aria-controls="collapsePhotooxy">
+  <i class="fas fa-fw fa-images"></i>
+  <span>Photooxy API</span>
+</a>
+<div id="collapsePhotooxy" class="collapse" aria-labelledby="headingText" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Photooxy Fitur</h6>
+<a class="collapse-item" href="/api/photooxy/shadow?apikey=APIKEYMU&text=Raku">Shadow Text</a>
+<a class="collapse-item" href="/api/photooxy/smoke?apikey=APIKEYMU&text=Raku">Smoke Text</a>
+<a class="collapse-item" href="/api/photooxy/burn-paper?apikey=APIKEYMU&text=Raku">Burn-paper Text</a>
+<a class="collapse-item" href="/api/photooxy/naruto?apikey=APIKEYMU&text=Raku">Naruto Text</a>
+<a class="collapse-item" href="/api/photooxy/romantic?apikey=APIKEYMU&text=Raku">Romantic Text</a>
+<a class="collapse-item" href="/api/photooxy/love-message?apikey=APIKEYMU&text=Raku">Love-Message Text</a>
+<a class="collapse-item" href="/api/photooxy/message-under-grass?apikey=APIKEYMU&text=Raku">Message-Under Grass</a>
+<a class="collapse-item" href="/api/photooxy/glitch?apikey=APIKEYMU&text1=Raku&text2=Rest API">Glitch Text</a>
+<a class="collapse-item" href="/api/photooxy/double-heart?apikey=APIKEYMU&text=Raku">Double Heart</a>
+<a class="collapse-item" href="/api/photooxy/coffe-cup?apikey=APIKEYMU&text=Raku">Coffe cup</a>
+<a class="collapse-item" href="/api/photooxy/love-text?apikey=APIKEYMU&text=Raku">Love Text</a>
+<a class="collapse-item" href="/api/wolverine?image=https://i.ibb.co/cyM9YyH/logoku.jpg&apikey=APIKEYMU">Wolverine Text</a>
+<a class="collapse-item" href="/api/photooxy/butterfly?apikey=APIKEYMU&text=Raku">Butterfly Text</a>
+  </div>
+</div>
+  </li>
+<li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePen" aria-expanded="true"
+  aria-controls="collapsePen">
+<i class="fas fa-fw fa-pencil"></i>
+  <span>Canvas API</span>
+</a>
+<div id="collapsePen" class="collapse" aria-labelledby="headingText" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<a class="collapse-item" href="/api/bot/welkom2?pp=https://i.ibb.co/cyM9YyH/logoku.jpg&nama=Raku&bg=https://telegra.ph/file/e095868232316fb2a937e.jpg&gc=zerobot&member=200&apikey=APIKEYMU">Welcome</a>
+<a class="collapse-item" href="/api/bot/goodbye2?pp=https://i.ibb.co/cyM9YyH/logoku.jpg&nama=Raku&bg=https://telegra.ph/file/e095868232316fb2a937e.jpg&member=200&apikey=APIKEYMU">Goodbye</a>
+<a class="collapse-item" href="/api/bot/welkom?nama=Raku&gc=zerobot&ppgc=https://i.ibb.co/cyM9YyH/logoku.jpg&member=200&pp=https://i.ibb.co/cyM9YyH/logoku.jpg&bg=https://telegra.ph/file/e095868232316fb2a937e.jpg&apikey=APIKEYMU">Welcome 2</a>
+<a class="collapse-item" href="/api/bot/goodbye?nama=Raku&gc=zerobot&ppgc=https://i.ibb.co/cyM9YyH/logoku.jpg&member=200&pp=https://i.ibb.co/cyM9YyH/logoku.jpg&bg=https://telegra.ph/file/e095868232316fb2a937e.jpg&apikey=APIKEYMU">Goodbye 2</a>
+<a class="collapse-item" href="/api/bot/welkom3?pp=https://i.ibb.co/cyM9YyH/logoku.jpg&nama=Raku&gc=zerobot&bg=https://telegra.ph/file/e095868232316fb2a937e.jpg&apikey=APIKEYMU">Welcome 3</a>
+<a class="collapse-item" href="/api/bot/goodbye3?pp=https://i.ibb.co/cyM9YyH/logoku.jpg&nama=Raku&gc=zerobot&bg=https://telegra.ph/file/e095868232316fb2a937e.jpg&apikey=APIKEYMU">Goodbye 3</a>
+<a class="collapse-item" href="/api/kanpas/welkom?pp=https://i.ibb.co/cyM9YyH/logoku.jpg&nama=Raku&gc=zerobot&bg=https://telegra.ph/file/e095868232316fb2a937e.jpg&apikey=APIKEYMU">Welcome 4</a>
+<a class="collapse-item" href="/api/kanpas/goodbye?pp=https://i.ibb.co/cyM9YyH/logoku.jpg&nama=Raku&gc=zerobot&bg=https://telegra.ph/file/e095868232316fb2a937e.jpg&apikey=APIKEYMU">Goodbye 4</a>
+<a class="collapse-item" href="/api/welkom2?nama=Raku&bcolor=fffff&pp=https://i.ibb.co/cyM9YyH/logoku.jpg&bg=https://telegra.ph/file/e095868232316fb2a937e.jpg&apikey=APIKEYMU">Welcome 5</a>
+<a class="collapse-item" href="/api/goodbye2?nama=Raku&bcolor=fffff&pp=https://i.ibb.co/cyM9YyH/logoku.jpg&bg=https://telegra.ph/file/e095868232316fb2a937e.jpg&apikey=APIKEYMU">Goodbye 5</a>
+<a class="collapse-item" href="/api/bot/rank?pp=https://i.ibb.co/cyM9YyH/logoku.jpg&nama=Raku&bg=https://telegra.ph/file/e095868232316fb2a937e.jpg&needxp=20&currxp=25&level=30&rank=2&apikey=APIKEYMU">Rank</a>
+<a class="collapse-item" href="/api/bot/bag?bg=https://telegra.ph/file/6d94aacbfab6b5a8d45ad.png&stone=20&coal=20&wood=20&core=20&iore=20&gore=20&cingot=20&iingot=20&gingot=20&diamond=20&ruby=20&uranium=20&jadite=20&leather=20&meat=20&fish=20&apikey=APIKEYMU">Bag</a>
+<a class="collapse-item" href="/api/bot/levelup?pp=https://i.ibb.co/cyM9YyH/logoku.jpg&apikey=APIKEYMU">Levelup</a>
+<a class="collapse-item" href="/api/bot/sponbob?pp=https://telegra.ph/file/6d94aacbfab6b5a8d45ad.png&apikey=APIKEYMU">Spongebob</a>
+<a class="collapse-item" href="/api/bot/gfx1?nama=Raku&apikey=APIKEYMU">GFX 1</a>
+<a class="collapse-item" href="/api/bot/gfx2?nama=Raku&apikey=APIKEYMU">GFX 2</a>
+<a class="collapse-item" href="/api/bot/gfx3?text1=Raku&text2=Gans&apikey=APIKEYMU">GFX 3</a>
+<a class="collapse-item" href="/api/bot/gfx4?text1=Raku&text2=Gans&apikey=APIKEYMU">GFX 4</a>
+<a class="collapse-item" href="/api/bot/gfx5?text=Raku&apikey=APIKEYMU">GFX 5</a>
+<a class="collapse-item" href="/api/bot/gura?name=Raku&apikey=APIKEYMU">GURA</a>
+ </div>
+</div>
+</li>
+  <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTextpro" aria-expanded="true"
+  aria-controls="collapseTextpro">
+  <i class="angle fa fa-angle-right"></i>
+  <span>Shortlink API</span>
+</a>
+<div id="collapseTextpro" class="collapse" aria-labelledby="headingAnime" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Shortlink Fitur</h6>
+<a class="collapse-item" href="/api/short/bitly?url=google.com&apikey=APIKEYMU">Shortlink Bit.Ly</a>
+<a class="collapse-item" href="/api/short/tinyurl?url=google.com&apikey=APIKEYMU">Shortlink Tinyurl</a>
+</div>
+</div>
+  </li>
+  <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTextpro" aria-expanded="true"
+  aria-controls="collapseTextpro">
+  <i class="fas fa-fw fa-images"></i>
+  <span>Textpro API</span>
+</a>
+<div id="collapseTextpro" class="collapse" aria-labelledby="headingAnime" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Textpro Fitur</h6>
+<a class="collapse-item" href="/api/textpro/natural-leaves?apikey=APIKEYMU&text=Raku">Natural Leaves Text Images</a>
+<a class="collapse-item" href="/api/textpro/black-pink?apikey=APIKEYMU&text=Raku">Black Pink Text Image</a>
+<a class="collapse-item" href="/api/textpro/drop-water?apikey=APIKEYMU&text=Raku">Drop Water Text Image</a>
+<a class="collapse-item" href="/api/textpro/logo-wolf?apikey=APIKEYMU&text=Raku&text2=Gans">Logo Wolf Text Image</a>
+<a class="collapse-item" href="/api/textpro/logo-wolf2?apikey=APIKEYMU&text=Raku&text2=Gans">Logo Wolf 2 Text Image</a>
+<a class="collapse-item" href="/api/textpro/logo-wolf?apikey=APIKEYMU&text=Raku&text2=Gans">Thunder Text Image</a>
+<a class="collapse-item" href="/api/textpro/logo-wolf?apikey=APIKEYMU&text=Raku">Firework Sparkle Text Image</a>
+<a class="collapse-item" href="/api/textpro/logo-wolf?apikey=APIKEYMU&text=Raku&text2=Gans">Matrix Text Image</a>
+<a class="collapse-item" href="/api/textpro/christmas?apikey=APIKEYMU&text=Raku">Christmas Text Image</a>
+<a class="collapse-item" href="/api/textpro/3d-gradient?apikey=APIKEYMU&text=Raku">3D Gradient Text Image</a>
+<a class="collapse-item" href="/api/textpro/porn-hub?apikey=APIKEYMU&text1=Raku&text2=Gans">Porn Hub Text Image</a>
+  </div>
+</div>
+  </li>
+  <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRandom"
+  aria-expanded="true" aria-controls="collapseRandom">
+  <i class="fas fa-random"></i>
+  <span>Random API</span>
+</a>
+<div id="collapseRandom" class="collapse" aria-labelledby="headingGithub" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Random API</h6>
+<a class="collapse-item" href="/api/bucin?apikey=APIKEYMU">Bucin</a>
+<a class="collapse-item" href="/api/random/pantun?apikey=APIKEYMU">Pantun</a>
+<a class="collapse-item" href="/api/cerpen?apikey=APIKEYMU">Cerpen</a>
+<a class="collapse-item" href="/api/cersex?apikey=APIKEYMU">Cersex</a>
+<a class="collapse-item" href="/api/random/quotes?apikey=APIKEYMU">Quotes</a>
+<a class="collapse-item" href="/api/random/quotes/muslim?apikey=APIKEYMU">Quotes Islami</a>
+<a class="collapse-item" href="/api/random/quotes/kanye?apikey=APIKEYMU">Quotes Kanye</a>
+<a class="collapse-item" href="/api/random/meme?apikey=APIKEYMU">Meme</a>
+<a class="collapse-item" href="/api/random/wallpaper?apikey=APIKEYMU">Wallpaper</a>
+  </div>
+</div>
+  </li>
+  <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAnime" aria-expanded="true"
+  aria-controls="collapseAnime">
+  <i class="fas fa-cat"></i>
+  <span>Anime API</span>
+</a>
+<div id="collapseAnime" class="collapse" aria-labelledby="headingAnime" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Anime Fitur</h6>
+<a class="collapse-item" href="/api/anime/kusonime?search=planetarian&apikey=APIKEYMU">Kusonime</a>
+<a class="collapse-item" href="/api/anime/manga?search=kimetsu no yaiba&apikey=APIKEYMU">Manga</a>
+<a class="collapse-item" href="/api/anime/loli?apikey=APIKEYMU">Random Loli</a>
+<a class="collapse-item" href="/api/neonime?apikey=APIKEYMU&query=Naruto">Neonime</a>
+  </div>
+</div>
+  </li>
+  <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGames" aria-expanded="true" aria-controls="collapseForm">
+  <i class="fas fa-laugh-beam"></i>
+   <span>Fun API</span>
+   </a>
+  <div id="collapseGames" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+   <div class="bg-primary py-2 collapse-inner rounded">
+ <h6 class="collapse-header">Fun Fitur</h6>
+ <a class="collapse-item" href="/api/artimimpi?apikey=APIKEYMU&query=ngewe">Arti Mimpi</a>
+ <a class="collapse-item" href="/api/artinama?apikey=APIKEYMU&query=Raku">Arti Nama</a>
+<a class="collapse-item" href="/api/kuis/caklontong?apikey=APIKEYMU">Cak Lontong</a>
+<a class="collapse-item" href="/api/kuis/tebakgambar?apikey=APIKEYMU">Tebak Gambar</a>
+<a class="collapse-item" href="/api/tebakbendera?apikey=APIKEYMU">Tebak Bendera</a>
+<a class="collapse-item" href="/api/maker/dadu?apikey=APIKEYMU">Tebak Dadu</a>
+ <a class="collapse-item" href="/api/hilih?kata=ngapain mydw&apikey=APIKEYMU">Kata Hilih</a>
+ </div>
+ </div>
+</li>
+   <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseItem" aria-expanded="true" aria-controls="collapseForm">
+  <i class="fas fa-wrench"></i>
+   <span>Tools API</span>
+   </a>
+  <div id="collapseItem" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+   <div class="bg-primary py-2 collapse-inner rounded">
+ <h6 class="collapse-header">Tools Fitur</h6>
+<a class="collapse-item" href="/api/web2plain-text?apikey=APIKEYMU&url=https://zerochanbot.herokuapp.com">Web To Plain-Text</a>
+<a class="collapse-item" href="/api/tools/wpuser?apikey=APIKEYMU&url=http://gdjms.co.za/" target="_blank">Wordpress User</a>
+<a class="collapse-item" href="/api/translate?kata=hi&apikey=APIKEYMU">Translate</a>
+<a class="collapse-item" href="/api/fakedata?country=en&apikey=APIKEYMU">Fake Data</a>
+ <h6 class="collapse-header">Encrypt Tools</h6>
+<a class="collapse-item" href="/api/base?apikey=APIKEYMU&type=base64&encode=APIKEYMU">Base64 Encrypt</a>
+<a class="collapse-item" href="/api/base?apikey=APIKEYMU&type=base32&encode=APIKEYMU">Base32 Encrypt</a>
+ <h6 class="collapse-header">Decrypt Tools</h6>
+<a class="collapse-item" href="/api/base?apikey=APIKEYMU&type=base64&decode=APIKEYMU">Base64 Decrypt</a>
+<a class="collapse-item" href="/api/base?apikey=APIKEYMU&type=base32&decode=APIKEYMU">Base32 Decrypt</a>
+ </div>
+ </div>
+</li>
+  <li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInfo" aria-expanded="true"
+  aria-controls="collapseother">
+  <i class="fab fa-fw fa-wpforms"></i>
+  <span>Other API</span>
+</a>
+<div id="collapseInfo" class="collapse" aria-labelledby="headingother" data-parent="#accordionSidebar">
+  <div class="bg-primary py-2 collapse-inner rounded">
+<h6 class="collapse-header">Other Menu</h6>
+<a class="collapse-item" href="/api/jadwaltvnow?apikey=APIKEYMU">Jadwal Tv Now</a>
+<a class="collapse-item" href="/api/jadwaltv?apikey=APIKEYMU&query=Gtv">Jadwal Tv</a>
+<a class="collapse-item" href="/api/info/gempa?apikey=APIKEYMU">Info Gempa</a>
+<a class="collapse-item" href="/api/info/cuaca?apikey=APIKEYMU&kota=sukoharjo">Info Cuaca</a>
+<a class="collapse-item" href="/api/info/covidindo?apikey=APIKEYMU">Covid Indo</a>
+<a class="collapse-item" href="/api/info/covidworld?apikey=APIKEYMU">Covid World</a>
+<a class="collapse-item" href="/api/info/wikipedia?search=jembatan&apikey=APIKEYMU">Wikipedia</a>
+<a class="collapse-item" href="/api/info/drakorasia?search=tale&apikey=APIKEYMU">Drakor Asia</a>
+<a class="collapse-item" href="/api/info/kbbi?kata=pohon&apikey=APIKEYMU">KBBI</a>
+<a class="collapse-item" href="/api/info/kodepos?kota=jakarta&apikey=APIKEYMU">Kode Pos</a>
+  </div>
+</div>
+  </li>
+  <hr class="sidebar-divider">
+  <div class="sidebar-heading">
+<div class="version"><b>Contact With Me</b></div>
+  </div>
+  <li class="nav-item">
+<a class="nav-link collapsed" href="https://wa.me/6287834993722">
+<i class="fab fa-fw fa-whatsapp"></i>
+<span>WhatsApp</span>
+</a>
+  </li>
+  <li class="nav-item">
+<a class="nav-link collapsed" href="https://youtube.com/c/ZEROBOT7">
+<i class="fab fa-fw fa-youtube"></i>
+<span>YouTube</span>
+</a>
+</li>
+<hr class="sidebar-divider">
+<div class="version"><b>Made With ♥️ By Raku</b></div>
+</ul>
+<!-- Sidebar -->
+<div id="content-wrapper" class="d-flex flex-column">
+  <div id="content">
+<!-- TopBar -->
+<nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+  <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+<i class="fa fa-bars text-dark"></i>
+  </button>
+  <ul class="navbar-nav ml-auto">
+<li class="nav-item dropdown no-arrow">
+  <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+aria-haspopup="true" aria-expanded="false">
+<i class="fas fa-search fa-fw"></i>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+aria-labelledby="searchDropdown">
+<form class="navbar-search">
+  <div class="input-group">
+<input type="text" class="form-control bg-light border-1 small" placeholder="Pencarian"
+  aria-label="Search" aria-describedby="basic-addon2" style="border-color: #3f51b5;">
+<div class="input-group-append">
+  <button class="btn btn-primary" type="button">
+<i class="fas fa-search fa-sm"></i>
+  </button>
+</div>
+  </div>
+</form>
+  </div>
+</li>
+<li class="nav-item dropdown no-arrow mx-1">
+  <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+aria-haspopup="true" aria-expanded="false">
+<i class="fas fa-bell fa-fw"></i>
+<span class="badge badge-danger badge-counter">2</span>
+  </a>
+  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+aria-labelledby="alertsDropdown">
+<h6 class="dropdown-header">
+  Notification
+</h6>
+<a class="dropdown-item d-flex align-items-center" href="#">
+  <div class="mr-3">
+<div class="icon-circle bg-primary">
+  <i class="fas fa-bell text-white"></i>
+</div>
+  </div>
+  <div>
+<div class="small text-gray-500">22 September 2021</div>
+<span class="font-weight-bold">Website Dibuat Owner</span>
+  </div>
+</a>
+<a class="dropdown-item d-flex align-items-center" href="#">
+  <div class="mr-3">
+<div class="icon-circle bg-warning">
+  <i class="fas fa-file-alt text-white"></i>
+</div>
+  </div>
+  <div>
+<div class="small text-gray-500">23 September 2021</div>
+<span class="font-weight-bold">Website Resmi Dirilis</span>
+  </div>
+</a>
+<a class="dropdown-item text-center small text-gray-500" href="#">Baca Selengkapnya</a>
+  </div>
+</li>
+<li class="nav-item dropdown no-arrow mx-1">
+  <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+aria-haspopup="true" aria-expanded="false">
+<i class="fas fa-envelope fa-fw"></i>
+<span class="badge badge-warning badge-counter">3</span>
+  </a>
+  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+aria-labelledby="messagesDropdown">
+<h6 class="dropdown-header">
+  Message 
+</h6>
+<a class="dropdown-item d-flex align-items-center" href="#">
+  <div class="dropdown-list-image mr-3">
+<img class="rounded-circle" src="https://i.ibb.co/cyM9YyH/logoku.jpg" style="max-width: 60px" alt="">
+<div class="status-indicator bg-success"></div>
+  </div>
+  <div class="font-weight-bold">
+<div class="text-truncate">Apikey Beli Lewat Via WhatsApp
+ </div>
+<div class="small text-gray-500">RakuGans · Baru Saja</div>
+  </div>
+</a>
+<a class="dropdown-item d-flex align-items-center" href="#">
+  <div class="dropdown-list-image mr-3">
+<img class="rounded-circle" src="https://i.ibb.co/cyM9YyH/logoku.jpg" style="max-width: 60px" alt="">
+<div class="status-indicator bg-default"></div>
+  </div>
+<div class="font-weight-bold">
+<div class="text-truncate">Mau Buat Apikey Custom? Chat Owner
+</div>
+<div class="small text-gray-500">RakuGans · 1 menit yang lalu</div>
+  </div>
+</a>
+<a class="dropdown-item d-flex align-items-center" href="#">
+<div class="dropdown-list-image mr-3">
+<img class="rounded-circle" src="https://i.ibb.co/cyM9YyH/logoku.jpg" style="max-width: 60px" alt="">
+<div class="status-indicator bg-default"></div>
+ </div>
+<div class="font-weight-bold">
+<div class="text-truncate">Kalau Mau Beli Cuma Seharga 10K 
+</div>
+<div class="small text-gray-500">RakuGans · 5 menit yang lalu</div>
+</div>
+</a>
+<a class="dropdown-item text-center small text-gray-500" href="#">Baca Selengkapnya</a>
+  </div>
+</li>
+<li class="nav-item dropdown no-arrow mx-1">
+  <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+aria-haspopup="true" aria-expanded="false">
+<i class="fas fa-tasks fa-fw"></i>
+<span class="badge badge-success badge-counter">3</span>
+  </a>
+  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+aria-labelledby="messagesDropdown">
+<h6 class="dropdown-header">
+  Programming Skill
+</h6>
+<a class="dropdown-item align-items-center" href="#">
+  <div class="mb-3">
+<div class="small text-gray-500">Copas Fitur
+  <div class="small float-right"><b>90%</b></div>
+</div>
+<div class="progress" style="height: 12px;">
+  <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90"
+aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+  </div>
+</a>
+<a class="dropdown-item align-items-center" href="#">
+  <div class="mb-3">
+<div class="small text-gray-500">JavaScript
+  <div class="small float-right"><b>30%</b></div>
+</div>
+<div class="progress" style="height: 12px;">
+  <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30"
+aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+  </div>
+</a>
+  </div>
+</li>
+<div class="topbar-divider d-none d-sm-block"></div>
+<li class="nav-item dropdown no-arrow">
+  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+aria-haspopup="true" aria-expanded="false">
+<img class="img-profile rounded-circle" src="https://i.ibb.co/cyM9YyH/logoku.jpg" style="max-width: 60px">
+<span class="ml-2 d-none d-lg-inline text-white small">Raku</span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="https://wa.me/6287834993722">
+                  <i class="fab fa-fw fa-whatsapp"></i>
+                  Whatsapp
+                </a>
+                <a class="dropdown-item" href="https://youtube.com/c/ZEROBOT7">
+                  <i class="fab fa-fw fa-youtube"></i>
+                  YouTube
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/register.html">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/login.html">
+                  <i class="fas fa-sign-in-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Login
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+<!-- Topbar -->
+<!-- Container Fluid-->
+<div class="container-fluid" id="container-wrapper">
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+ <div class="page-content">
+<div class="row">
+<div class="d-flex justify-content-between">
+<marquee  bgcolor="#16182D" style="margin-right: 6px; margin-left: 10px; margin-top: 10px;margin-bottom: 12px; border-radius: 5px;letter-spacing: 3px; font-family:arial; font-size:20px; color:#ffffff; padding-top: 4px;padding-bottom: 4px;"> Subscribe Channel YT : ZEROBOT </marquee>
+</div>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"> </i>Home</a></li>
+  <li class="breadcrumb-item active" aria-current="page">Beranda</li>
+</ol>
+  </div>
+<footer class="sticky-footer bg-dark">
+  <div class="col-lg-6">
+   <div class="card mb-4">
+<div class="card-header py-3">
+ <div class="card-body">
+   <div class="row align-item-center">
+  <img class="shadow mb-4" width="330px" height="300px" src="https://telegra.ph/file/ebb64a36c1f2dbe576dec.jpg">
+   </div>
+  </div>
+</div>
+  </div> 
+</div>
+  <div class="col-lg-6">
+   <div class="card mb-4">
+<div class="card-header py-3">
+ <div class="card-body">
+  <div class="row align-item-center">
+   <div id="demo" class="alert alert-info alert-dismissible" role="alert">
+<div id="Statistic"></div>
+ <span id="tgl">00</span> - <span id="bln">00</span> - <span id="thn"></span>
+</div>
+   </div>
+  </div>
+ </div> 
+</div>
+   </div>
+
+<div class="col-xl-3 col-md-6 mb-4">
+  <div class="card h-100">
+<div class="card-body">
+  <div class="row align-items-center">
+<div class="col mr-2">
+  <div class="text-xs font-weight-bold text-uppercase mb-1">Visitor</div>
+  <div class="h5 mb-0 font-weight-bold text-gray-800" id="visits">00</div>
+</div>
+<div class="col-auto">
+  <i class="fas fa-eye fa-2x text-primary"></i>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="col-xl-3 col-md-6 mb-4">
+  <div class="card h-100">
+  <div class="card-body">
+  <div class="row align-items-center">
+  <div class="col mr-2">
+  <div class="text-xs font-weight-bold text-uppercase mb-1">Waktu</div>
+ <div class="h5 mb-0 font-weight-bold text-gray-800" id='jam' ></div>
+  <div class="mt-2 mb-0 text-muted text-xs">
+  </div>
+  </div>
+  <div class="col-auto">
+  <b><i class="fas fa-clock fa-2x text-primary"></i>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+		
+<div class="col-xl-3 col-md-6 mb-4">
+  <div class="card h-100">
+  <div class="card-body">
+  <div class="row align-items-center">
+  <div class="col mr-2">
+  <div class="text-xs font-weight-bold text-uppercase mb-1">Your Battery</div>
+<div class="h5 mb-0 font-weight-bold text-gray-800" id='battery'><div class="battery"><div id="batteryLevel"></div><span id="percentageLevel"></span></div>
+<div class="mt-2 mb-0 text-muted text-xs">
+</div>
+</div>
+<div class="col-auto">
+  <b><i class="fas fa-battery fa-2x text-primary"></i>
+</div>
+</div>
+</div>
+</div>	    
+</div>	
+
+<!---Container Fluid-->
+  <!-- Footer -->
+ <form action="/api/cekapikey">
+<div class="col-xl-3 col-md-6 mb-4">
+  <div class="card h-100">
+<div class="card-body">
+  <div class="row align-items-center">
+<div class="col mr-2">
+   <div class="h6 mb-0 font-weight-bold text-dark-800 text-uppercase">
+  <h6 class="text-center">Check Apikey</h6>
+  </div>
+   <input type="password" class="form-control" placeholder="Input Your Apikey " name="apikey" required=""><br>
+<button class="btn btn-danger btn-icon-split">
+ <span class="icon text-white-50">
+  <i class="fas fa-check"></i>
+ </span>
+ <span class="text">Check Apikey</span>
+</button>
+ </div>
+</div>
+   </div>
+  </div>
+ </div>
+  </form>
+  <div class="col-xl-3 col-md-6 mb-4">
+<div class="card h-100">
+<div class="card-body">
+<div class="row no-gutters align-items-center">
+<div class="col mr-2">
+<center>
+<marquee>DJ Mengapa Semua Menangis - Raku</marquee>
+<audio src="https://d.top4top.io/m_2068633xv0.mp3" controls loop></audio>
+</center>
+</div>
+</div>
+<div class="col-auto">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-md-6 mb-4">
+  <div class="card h-100">
+  <div class="card-body">
+  <div class="row align-items-center">
+  <div class="col mr-2">
+  <div class="text-xs font-weight-bold text-uppercase mb-1">Informasi</div>
+<div class="h5 mb-0 font-weight-bold text-gray-800" id='info'>
+</div>
+<ol>
+<div class="dropdown-divider"></div>
+<li>Jangan Merusak Situs Kami</li>
+<div class="dropdown-divider"></div>
+<li>Jika Menemukan Bug Harap Segera Melapor</li>
+<div class="dropdown-divider"></div>
+<li>Jangan Lupa Donasi Agar Web Ini Semakin Berkembang</li>
+<div class="dropdown-divider"></div>
+<li>Mau Request Fitur? Chat Via <b><a href="https://wa.me/6287834993722" target="_blank">WhatsApp</a><b></li>
+<div class="dropdown-divider"></div>
+</ol>
+<b><i class="fas fa-danger fa-2x text-primary"></i>
+</div>
+</div>
+</div>
+</div>	    
+</div>	
+<div class="col-xl-3 col-md-6 mb-4">
+<div class="card h-100">
+<div class="card-body">
+<hr>
+<center>
+<div class="h5 mb-0 font-weight-bold text-gray-800">TICTACTOE</div>
+<i class="fa fa-gamepad fa-2x text-primary"></i>
+</center>
+<div class="mt-2 mb-0 text-muted text-xs">
+<div class="container1">
+<div class="play-area">
+</div>
+<h21 class="text-center" id="winner"></h21>
+<button1 onclick="reset_board()">ULANG</button1>
+</div>
+</div>
+</div>
+</div>
+  <div class="col-lg-6">
+   <div class="card mb-4">
+<div class="card-header py-3">
+ <div class="card-body">
+ <div class="card m-3 text-center shadow">
+   <p class="card-header shadow-sm bg-primary text-white text-uppercase">About Me</p>
+  <div class="text-center">
+<img src="https://i.ibb.co/cyM9YyH/logoku.jpg" class="rounded-circle shadow mb-3" alt="logo" width="125px" height="125px">
+  </div>
+  <div class="copyright text-center my-auto">
+ <p class="card-text text-shadow">Nathanael Hananta Jevano<br>12 Tahun<br></p><div class="text-xs font-weight-bold text-uppercase">
+   <h6 class="text-uppercase">Thanks To :</h6>
+   TUHAN YME<br>ORANG TUAKU<br>LOLHUMAN<br>HEXAGONZ
+ </div>
+ </div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
    <style>
   .bg-orange {
       background-color: #c3cf0f;
@@ -216,1055 +1030,20 @@ button1:hover {
 }
 
 </style>
-<body>
 
-<script src="https://unpkg.com/feather-icons"></script>
+  <div class="card-body">
+<p><b>
+<p>
+</b>
+</p>
+</div>
+</div>
+</div>
 
-</body>
 
-
-
-   <body>
-
-      <div class="loader"></div>
-
-      <div id="app">
-
-         <div class="main-wrapper main-wrapper-1">
-
-            <div class="navbar-bg"></div>
-
-            <nav class="navbar navbar-expand-lg main-navbar sticky">
-
-               <div class="form-inline mr-auto">
-
-                  <ul class="navbar-nav mr-3">
-
-                     <li>
-
-                        <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg collapse-btn"> <i data-feather="align-justify"></i></a>
-
-                     </li>
-
-                     <li>
-
-                        <a href="#" class="nav-link nav-link-lg fullscreen-btn">
-
-                           <i data-feather="maximize"></i>
-
-                        </a>
-
-                     </li>
-
-                     <li>
-
-                        <form class="form-inline mr-auto">
-
-                           <div class="search-element">
-
-                              <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200" />
-
-                              <button class="btn" type="submit">
-
-                                 <i class="fas fa-search"></i>
-
-                              </button>
-
-                           </div>
-
-                        </form>
-
-                     </li>
-
-                  </ul>
-
-               </div>
-
-               <ul class="navbar-nav navbar-right">
-
-                  <li class="dropdown dropdown-list-toggle">
-
-                     <a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle"><i data-feather="mail"></i> <span class="badge headerBadge1"> 2 </span> </a>
-
-                     <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
-
-                        <div class="dropdown-header">
-
-                           Message
-
-                           <div class="float-right">
-
-                              <a href="#">Notifikasi</a>
-
-                           </div>
-
-                        </div>
-
-                        <div class="dropdown-list-content dropdown-list-message">
-
-                           <a href="#" class="dropdown-item">
-
-                              <span class="dropdown-item-avatar text-white"> <img alt="image" src="https://i.ibb.co/cyM9YyH/logoku.jpg" class="rounded-circle" /> </span>
-
-                              <span class="dropdown-item-desc">
-
-                                 <span class="message-user">ZEROGANS API's</span>
-
-                                 <span class="time messege-text">Pakai Seadanya Dulu Ngab, Baru Gw Benerin</span>
-
-                                 <span class="time">20 September - 2021</span>
-
-                              </span>
-
-                           </a>
-
-                           <a href="#" class="dropdown-item">
-
-                              <span class="dropdown-item-avatar text-white">
-
-                                 <img alt="image" src="https://i.ibb.co/cyM9YyH/logoku.jpg" class="rounded-circle" />
-
-                              </span>
-
-                              <span class="dropdown-item-desc">
-
-                                 <span class="message-user">ZEROGANS API's</span> <span class="time messege-text">Jangan Lupa Subscribe YT : ZEROBOT</span>
-
-                                 <span class="time">21 September - 2021</span>
-
-                              </span>
-                           				   
-                           </a>
-
-                        </div>
-
-                        <div class="dropdown-footer text-center">
-
-                           <a href="#">Pesal Lainnya...</a>
-
-                        </div>
-
-                     </div>
-
-                  </li>
-
-                  <li class="dropdown dropdown-list-toggle">
-
-                     <a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg"><i data-feather="bell" class="bell"></i> </a>
-
-                     <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
-
-                        <div class="dropdown-header">
-
-                           Notifications
-
-                           <div class="float-right">
-
-                              <a href="#">Mark All As Read</a>
-
-                           </div>
-
-                        </div>
-
-                        <div class="dropdown-list-content dropdown-list-icons">
-
-                           <a href="#" class="dropdown-item dropdown-item-unread">
-
-                              <span class="dropdown-item-icon bg-primary text-white"> <i data-feather="code"></i> </span> <span class="dropdown-item-desc"> Jika Menemukan Bug Harap Segera Melapor!!<span class="time">Yesterday</span> </span>
-
-                           </a>
-
-                        </div>
-
-                        <div class="dropdown-footer text-center">
-
-                           <a href="#">Pesal Lainnya...</a>
-
-                        </div>
-
-                     </div>
-
-                  </li>
-
-                  <li class="dropdown">
-
-                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-
-                        <img alt="image" src="https://i.ibb.co/cyM9YyH/logoku.jpg" class="user-img-radious-style" /> <span class="d-sm-none d-lg-inline-block"></span>
-
-                     </a>
-
-                     <div class="dropdown-menu dropdown-menu-right pullDown">
-
-                        <div class="dropdown-title">ZEROGANS API's - RestApi</div>
-
-                        <a href="https://wa.me/6287834993722?text=Halo+Bang+Apikeynya+apa?+Udh+Subrek+Nih+bntr+ku+kasih+buktinya" class="dropdown-item has-icon"> <i data-feather="key"></i> Apikey </a>
-
-                        <a href="/about" class="dropdown-item has-icon"><i data-feather="info"></i> About</a>
-
-                     </div>
-
-                  </li>
-
-               </ul>
-
-            </nav>
-
-            <div class="main-sidebar sidebar-style-2">
-
-               <aside id="sidebar-wrapper">
-
-                  <div class="sidebar-brand">
-
-                     <a href="/"><span class="logo-name">RestApi</span></a>
-
-                  </div>
-
-                  <div class="sidebar-user">
-
-                     <div class="sidebar-user-picture">
-
-		         <img alt="image" src="https://i.ibb.co/cyM9YyH/logoku.jpg" />
-
-                     </div>
-
-                     <div class="sidebar-user-details">
-
-                        <div class="user-name">ZEROGANS API's</div>
-
-                        <div class="user-role">Developer</div>
-
-                     </div>
-
-                  </div>
-
-                  <ul class="sidebar-menu">
-
-                     <li class="menu-header">Main</li>
-
-                     <li>
-
-                        <a href="/" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
-
-                     </li>
-
-                     </li>
-
-                     <li class="menu-header">Menu</li>
-
-                     <li class="dropdown">                        
-<a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="edit-2"></i><span>Photooxy Text</span></a>
-
-                        <ul class="dropdown-menu">
-
-                   <a class="nav-link" href="/api/photooxy/shadow?apikey=Masukkan_ApikeyNya&text=Yuda" target="_blank">Shadow Text</a>
-
-		           <a class="nav-link" href="/api/photooxy/romantic?apikey=Masukkan_ApikeyNya&text=Yuda" target="_blank">Romantic Text</a>
-
-		           <a class="nav-link" href="/api/photooxy/smoke?apikey=Masukkan_ApikeyNya&text=Yuda" target="_blank">Smoke Text</a>
-
-		           <a class="nav-link" href="/api/photooxy/burn-paper?apikey=Masukkan_ApikeyNya&text=Yuda" target="_blank">Burn paper Text</a>
-
-		           <a class="nav-link" href="/api/photooxy/naruto?apikey=Masukkan_ApikeyNya&text=Yuda" target="_blank">Naruto Text</a>
-
-		           <a class="nav-link" href="/api/photooxy/love-message?apikey=Masukkan_ApikeyNya&text=Yuda" target="_blank">Love Text</a>
-
-		           <a class="nav-link" href="/api/photooxy/message-under-grass?apikey=Masukkan_ApikeyNya&text=Yuda" target="_blank">Under Grass Text</a>
-
-		           <a class="nav-link" href="/api/photooxy/glitch?apikey=Masukkan_ApikeyNya&text=Yuda&text2=Rest APIs" target="_blank">Glitch Text</a>
-
-		           <a class="nav-link" href="api/photooxy/double-heart?apikey=Masukkan_Apikeynya&text=Yuda" target="_blank">double heart text</a>
-
-		           <a class="nav-link" href="api/photooxy/butterfly?apikey=Masukkan_Apikeynya&text=Yuda" target="_blank">Flower Text</a>
-                
-                   <a class="nav-link" href="api/photooxy/coffe-cup?apikey=Masukkan_Apikeynya&text=Yuda" target="_blank">CoffeCup Text</a>
-
-  
-                        </ul>
-
-                     </li>
-   <li class="dropdown">                        
-<a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="edit-2"></i><span> Text Pro</span></a>
-
-                        <ul class="dropdown-menu">
-
-                   <a class="nav-link" href="/api/textpro/natural-leaves?apikey=Masukkan_ApikeyNya&text=Eka" target="_blank">Natural-leaves Text</a>
-
-		           <a class="nav-link" href="/api/textpro/black-pink?apikey=Masukkan_ApikeyNya&text=Eka" target="_blank">Blackpink Text</a>
-
-		           <a class="nav-link" href="/api/textpro/drop-water?apikey=Masukkan_ApikeyNya&text=Eka" target="_blank">Dropwater Text</a>
-
-		           <a class="nav-link" href="/api/textpro/logo-wolf?apikey=Masukkan_ApikeyNya&text=Eka&text2=Danu" target="_blank">Logo Wolf</a>
-
-		           <a class="nav-link" href="/api/textpro/logo-wolf2?apikey=Masukkan_ApikeyNya&text=Eka&text2=Danu" target="_blank">Logo Wolf2</a>
-
-		           <a class="nav-link" href="/api/textpro/christmas?apikey=Masukkan_ApikeyNya&text=Eka" target="_blank">Christmas Text Image</a>
-
-		           <a class="nav-link" href="/api/textpro/3d-gradient?apikey=Masukkan_ApikeyNya&text=Eka" target="_blank">3D Gradient Text Image</a>
-
-		           <a class="nav-link" href="/api/textpro/porn-hub?apikey=Masukkan_ApikeyNya&text1=Eka&text2=Gans" target="_blank">Pornhub Text</a>
-                        </ul>
-
-                     </li>
-                   <li class="dropdown">                        
-                   <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="edit-2"></i><span>Maker Menu</span></a>
-
-                   <ul class="dropdown-menu">
-                  
-                   <a class="nav-link" href="/api/maker/nulis?apikey=Masukkan_ApikeyNya&text=Awokwokwok Mager yaa:v" target="_blank">Nulis Buku</a>
-
-                   <a class="nav-link" href="/api/maker/tololserti?apikey=Masukkan_ApikeyNya&text=Eka" target="_blank">Tolol Serti</a>
-
-		           <a class="nav-link" href="/api/maker/attp?apikey=Masukkan_ApikeyNya&text=Eka" target="_blank">Attp</a>
-
-		           <a class="nav-link" href="/api/maker/ttp?apikey=Masukkan_ApikeyNya&text=Eka" target="_blank">Ttp</a>
-
-		           <a class="nav-link" href="/api/maker/emoji2png?apikey=Masukkan_ApikeyNya&text=😂" target="_blank">EmojinToPng</a>
-                   <a class="nav-link" href="/api/maker/skatch?apikey=Masukkan_ApikeyNya&url=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbmrYfgiRt1lLwNgRMgMbID62qH3EQ2T1c6RUJEQMcoCWKqVVxAg7R_LfM&s=10" target="_blank">Skatch Effect</a>
-
-		       
-		              <a class="nav-link" href="/api/maker/harta-tahta?apikey=Masukkan_ApikeyNya&text=Eka" target="_blank">Harta Tahta</a>
-               
-                     </ul>
-                  </li>
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="download"></i><span>Media</span></a>
-
-                        <ul class="dropdown-menu">
-
-                           <a class="nav-link" href="/api/download/ig?url=https://www.instagram.com/p/CNtpwxuH5NK/?igshid=g26k5coikzwr&apikey=Masukkan_ApikeyNya" target="_blank">Ig Download</a>
-		           <a class="nav-link" href="/api/download/fb?url=https://www.facebook.com/alanwalkermusic/videos/277641643524720&apikey=Masukkan_ApikeyNya" target="_blank">Facebook Downloader</a>
-
-		           <a class="nav-link" href="/api/download/tiktok?url=https://vt.tiktok.com/ZSJhvu1AE/&apikey=Masukkan_ApikeyNya" target="_blank">Tiktok Downloader</a>
-
-		           <a class="nav-link" href="/api/yt/playmp3?query=Monolog-pamungkas&apikey=Masukkan_ApikeyNya" target="_blank">Ytmp3</a>
-
-		           <a class="nav-link" href="/api/yt/playmp4?query=Monolog-pamungkas&apikey=Masukkan_ApikeyNya" target="_blank">Ytmp4</a>
-
-
-                        </ul>
-
-                     </li>
-
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="umbrella"></i><span>Islami</span></a>
-
-                        <ul class="dropdown-menu">
-
-		           <a class="nav-link" href="/api/hadits?kitab=bukhari&nomor=52&apikey=APIKEY" target="_blank">Hadits Shahih</a>
-
-		           <a class="nav-link" href="/api/quran?surah=1&ayat=2&apikey=APIKEY" target="_blank">Al Qur'an</a>
-
-		           <a class="nav-link" href="/api/muslim/tahlil?apikey=APIKEY" target="_blank">Doa Tahlil</a>
-
-		           <a class="nav-link" href="/api/muslim/wirid?apikey=MASUKAN_APIKEY" target="_blank">Doa Wirid</a>
-
-		           <a class="nav-link" href="/api/muslim/asmaulhusna?apikey=MASUKAN_APIKEY" target="_blank">Asmaul Husna</a>
-
-		           <a class="nav-link" href="/api/muslim/doaharian?apikey=MASUKAN_APIKEY" target="_blank">Doa Harian</a>
-
-		           <a class="nav-link" href="/api/muslim/ayatkursi?apikey=MASUKAN_APIKEY" target="_blank">Ayat Kursi</a>
-
-		           <a class="nav-link" href="/api/kisahnabi?nabi=muhammad&apikey=MASUKAN_APIKEY" target="_blank">Kisah Nabi</a>
-
-		           <a class="nav-link" href="/api/muslim/niatshalat?apikey=MASUKAN_APIKEY" target="_blank">Niat Shalat</a>
-
-		           <a class="nav-link" href="/api/muslim/bacaanshalat?apikey=MASUKAN_APIKEY" target="_blank">Bacaan Shalat</a>
-
-		           <a class="nav-link" href="/api/jadwalshalat?kota=jakartautara&apikey=MASUKAN_APIKEY" target="_blank">Jadwal Shalat</a>
-                           
-			</ul>
-
-                     </li>
-
-
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="feather"></i><span>Fun & Game</span></a>
-
-                        <ul class="dropdown-menu">
-
-                           <a class="nav-link" href="/api/kuis/caklontong?apikey=APIKEY" target="_blank">Cak Lontong (by Zahir)</a>
-
-                           <a class="nav-link" href="/api/kuis/tebakgambar?apikey=APIKEY" target="_blank">Tebak Gambar (by Zahir)</a>
-
-                           <a class="nav-link" href="/api/kuis/family100?apikey=APIKEY" target="_blank">family100</a>
-
-                           <a class="nav-link" href="/api/kuis/tebakbendera?apikey=APIKEY" target="_blank">tebak bendera</a>
-
-                           <a class="nav-link" href="/api/asupan?apikey=APIKEY" target="_blank">asupan</a>
-
-                           <a class="nav-link" href="/api/cecan?apikey=APIKEY" target="_blank">cecan</a>
-                          
-                           <a class="nav-link" href="/api/cersex?apikey=APIKEY" target="_blank">cersex</a>
-
-                           <a class="nav-link" href="api/simsimi/?text=hai&apikey=APIKEY" target="_blank">SimSimi</a>
-
-                        </ul>
-
-                     </li>
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="zoom-in"></i><span>Stalk</span></a>
-
-                        <ul class="dropdown-menu">
-
-                           <a class="nav-link" href="/api/stalk/tiktok?apikey=Masukkan_ApikeyNya&username=chikakiku" target="_blank">Tiktok</a>
-
-                           <a class="nav-link" href="/api/stalk/ig?apikey=Masukkan_ApikeyNya&username=ekagans_02" target="_blank">Instagram</a>
-
-
-
-                        </ul>
-
-                     </li>
-
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="anchor"></i><span>Primbon</span></a>
-
-                        <ul class="dropdown-menu">
-
-	                   <a class="collapse-item" href="/api/random/quotes?apikey=Masukkan_ApikeyNya" target="_blank">Quotes</a>
-
-			             <a class="collapse-item" href="/api/random/quotes/kanye?apikey=Masukkan_ApikeyNya" target="_blank">Quotes kanye<br></a>
-
-	                   <a class="collapse-item" href="/api/gabut?apikey=APIKEY" target="_blank">Gaboet</a>
-
-	                   <a class="collapse-item" href="/api/artinama/?nama=Yuda&apikey=Apikey" target="_blank">Artinama</a>
-
-	                   <a class="collapse-item" href="/api/tanggaljadian/?tgl=30&bln=02&thn=2018&apikey=apikey" target="_blank">Makna Tanggal Jadian</a>
-
-                        </ul>
-
-                     </li>
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="anchor"></i><span>Ucapan/Waktu</span></a>
-
-                        <ul class="dropdown-menu">
-
-	                   <a class="collapse-item" href="/api/ucapan-wib?apikey=ekagans" target="_blank">Ucapan Wib</a>
-
-			             <a class="collapse-item" href="/api/ucapan-wita?apikey=ekagans" target="_blank">Ucapan Wita<br></a>
-
-	                   <a class="collapse-item" href="/api/ucapan-wit?apikey=" target="_blank">Ucapan Wit</a>
-
-	                   <a class="collapse-item" href="/api/tahunbaru?apikey=ekagans" target="_blank">Ucapan Tahun Baru</a>
-
-	                   <a class="collapse-item" href="/api/hitungmundur?apikey=ekagans" target="_blank">Hitung Mundur</a>
-
-                        </ul>
-
-                     </li>
-
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="compass"></i><span>News</span></a>
-
-                        <ul class="dropdown-menu">
-
-		           <a class="collapse-item" href="/api/news/cnn?type=JENIS_BERITA&apikey=APIKEY" target="_blank">CNN News</a>
-
-		           <a class="collapse-item" href="/api/news/cnbc?type=JENIS_BERITA&apikey=MASUKKAN_APIKEY" target="_blank">CNBC News</a>
-
-		           <a class="collapse-item" href="/api/news/republika?type=JENIS_BERITA&apikey=MASUKKAN_APIKEY" target="_blank">Republika News</a>
-
-	    	  	   <a class="collapse-item" href="/api/news/tempo?type=JENIS_BERITA&apikey=MASUKKAN_APIKEY" target="_blank">Tempo News</a>
-
-		           <a class="collapse-item" href="/api/news/antara?type=JENIS_BERITA&apikey=MASUKKAN_APIKEY" target="_blank">Antara news</a>
-
-		           <a class="collapse-item" href="/api/news/kumparan?type=JENIS_BERITA&apikey=MASUKKAN_APIKEY" target="_blank">Kumparan news</a>
-
-
-                        </ul>
-
-                     </li>
-
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle collapse-item has-dropdown"><i data-feather="image"></i><span>Wallpaper & Image</span></a>
-
-                        <ul class="dropdown-menu">
-
-		           <a class="collapse-item" href="/api/wallpaper/teknologi?apikey=MASUKAN_APIKEY" target="_blank">Wallpaper Teknologi</a>
-
-		           <a class="collapse-item" href="/api/wallpaper/programming?apikey=MASUKAN_APIKEY" target="_blank">Wallpaper Programming</a>
-
-		           <a class="collapse-item" href="/api/wallpaper/cyberspace?apikey=MASUKAN_APIKEY" target="_blank">Wallpaper CyberSpace</a>
-
-		           <a class="collapse-item" href="/api/wallpaper/muslim?apikey=MASUKAN_APIKEY" target="_blank">Wallpaper Muslim</a>
-
- 		           <a class="collapse-item" href="/api/wallpaper/pegunungan?apikey=MASUKAN_APIKEY" target="_blank">Wallpaper Mountain View</a>
-
-
-                        </ul>
-
-                     </li>
-
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="disc"></i><span>Anime API</span></a>
-
-                        <ul class="dropdown-menu">
-
-		           <a class="collapse-item" href="/api/waifu?apikey=APIKEY" target="_blank">Waifu</a>
-
-		           <a class="collapse-item" href="/api/nekonime?apikey=APIKEY" target="_blank">Nekonime</a>
-
-                           <a class="collapse-item" href="/api/1cak?apikey=APIKEY" target="_blank">Random 1CAK</a>
-
-		           <a class="collapse-item" href="/api/neonimebatch?url=https://neonime.vip/batch/eromanga-sensei-bd-batch-subtitle-indonesia/&apikey=APIKEY" target="_blank">Neonime batch</a>
-
-		           <a class="collapse-item" href="/api/neonime?q=Shizuka&apikey=APIKEY" target="_blank">Neonime search</a>
-
-		           <a class="collapse-item" href="/api/manga?search=kimetsu no yaiba&apikey=APIKEY" target="_blank">Mangga</a>
-
-		           <a class="collapse-item" href="/api/anime/kusonime?search=planetarian&apikey=APIKEY" target="_blank">Kusonime search</a>
-
-                           <a class="collapse-item" href="/api/dewabatch?q=one piece&apikey=APIKEY" target="_blank">Dewabatch</a>
-
-                        </ul>
-
-                     </li>
-
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="sliders"></i><span>Random</span></a>
-
-                        <ul class="dropdown-menu">
-
-
-		           <a class="collapse-item" href="/api/random/meme?apikey=MASUKIN_APIKEY" target="_blank">Meme</a>
-
-		           <a class="collapse-item" href="/api/random/wallpaper?apikey=MASUKIN_APIKEY" target="_blank">Wallpaper</a>
-
-		           <a class="collapse-item" href="/api/nickepep?apikey=MASUKIN_APIKEY" target="_blank">nickepep<br></a>
-
-                        </ul>
-
-                     </li>
-
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="cloud-snow"></i><span>BMKG</span></a>
-
-                        <ul class="dropdown-menu">
-
-		           <a class="collapse-item" href="/api/infogempa?apikey=MASUKAN_APIKEY" target="_blank">Info Gempa</a>
-
-		           <a class="collapse-item" href="/api/cuaca?kabupaten=kab bungo&apikey=MASUKAN_APIKEY" target="_blank">Info Cuaca</a>
-
-		           <a class="collapse-item" href="/api/covidindo?apikey=MASUKAN_APIKEY" target="_blank">Covid Indo</a>
-
-    		           <a class="collapse-item" href="/api/covidworld?apikey=MASUKAN_APIKEY" target="_blank">Covid World</a>
-
-                        </ul>
-
-                     </li>
-
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="flag"></i><span>Education</span></a>
-
-                        <ul class="dropdown-menu">
-
-
-		           <a class="collapse-item" href="/api/wikipedia?search=jembatan&apikey=MASUKAN_APIKEY" target="_blank">Wikipedia</a>
-
-		           <a class="collapse-item" href="/api/kbbi?kata=pohon&apikey=MASUKAN_APIKEY" target="_blank">KBBI</a>
-
-		           <a class="collapse-item" href="/api/gabut?apikey=MASUKAN_APIKEY" target="_blank">Gabut</a>
-
-		           <a class="collapse-item" href="/api/translate?kata=hi&apikey=MASUKAN_APIKEY" target="_blank">Translate</a>
-
-                           <a class="collapse-item" href="/api/brainly?q=cara%20membuat%20Tuhan&apikey=MASUKAN_APIKEY" target="_blank">Brainly</a>
-
-                           <a class="collapse-item" href="/api/kodepos?kota=jakarta&apikey=APIKEY" target="_blank">kodepos</a>
-
-                        </ul>
-
-                     </li>
-
-
-
-                     <li class="dropdown">
-
-                        <a href="/" class="menu-toggle nav-link has-dropdown"><i data-feather="tv"></i><span>Film</span></a>
-
-                        <ul class="dropdown-menu">
-
-		           <a class="collapse-item" href="/api/filmapik/terbaru?apikey=MASUKAN_APIKEY" target="_blank">Film Terbaru (Film Apik)</a>
-
-		           <a class="collapse-item" href="/api/ck21/search?q=dilan&apikey=MASUKAN_APIKEY" target="_blank">Cari Film (Cinema Keren21)</a>
-
-		           <a class="collapse-item" href="/pn21/search?film=dilan&apikey=MASUKAN_APIKEY" target="_blank">Cari Film (Pop CorN21)</a>
-
-		           <a class="collapse-item" href="/api/lk21/search?film=avenger&apikey=MASUKAN_APIKEY" target="_blank">Cari Film (LK21)</a>
-
-		           <a class="collapse-item" href="/api/lk21/terbaru?apikey=MASUKAN_APIKEY" target="_blank">Film Terbaru (LK21)</a>
-
-		           <a class="collapse-item" href="/api/lk21/comingsoon?apikey=MASUKAN_APIKEY" target="_blank">Film Yg Akan Datang (LK21)</a>
-
-		           <a class="collapse-item" href="/api/lk21/tvseries?apikey=MASUKAN_APIKEY" target="_blank">Series TV (LK21)</a>
-
-		           <a class="collapse-item" href="/api/lk21/year?tahun=2021&apikey=MASUKAN_APIKEY" target="_blank">Berdasarkan Tahun (LK21)</a>
-
-		           <a class="collapse-item" href="/api/lk21/country?negara=indonesia&apikey=MASUKAN_APIKEY" target="_blank">Berdasarkan Negara (LK21)</a>
-
-		           <a class="collapse-item" href="/api/lk21/genre?tipe=action&apikey=MASUKAN_APIKEY" target="_blank">Berdasarkan Genre (LK21)</a>
-
-                        </ul>
-
-                     </li>
-
-                    
-
-                     <li class="dropdown">
-
-                        <a href="/" class="menu-toggle nav-link has-dropdown"><i data-feather="phone"></i><span>Spammer</span></a>
-
-                        <ul class="dropdown-menu">
-
-                        	<a class="collapse-item" href="/api/spamcall?number=85671568291&apikey=MASUKAN_APIKEY" target="_blank">Spam Call</a>
-
-                                <a class="collapse-item" href="/api/spamsms?number=085671568291&jumlah=5&apikey=MASUKAN_APIKEY" target="_blank">Spam SMS</a>
-
-                                <a class="collapse-item" href="/api/spamgmail?gmail=testgmail@gmail.com&jumlah=5&apikey=MASUKAN_APIKEY" target="_blank">Spam Gmail</a>
-
-
-
-                        </ul>
-
-                     </li>
-
-
-                           
-                   <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="book" aria-hidden="true"></i><span>Other</span></a>
-
-                        <ul class="dropdown-menu">
-
-             <a class="collapse-item" href="/api/infonpm?query=rey-api&hostname=rey&apikey=MASUKAN_APIKEY" target="_blank">Info NPM</a>
-
-            <a class="collapse-item" href="/api/short/tiny?url=google.com&apikey=MASUKAN_APIKEY" target="_blank">Short Link</a>
-
-            <a class="collapse-item" href="/api/drakorasia?search=tale&apikey=MASUKAN_APIKEY" target="_blank">Drakor Asia</a>
-
-            <a class="collapse-item" href="/api/fakedata?country=en&apikey=MASUKAN_APIKEY" target="_blank">Fake Data</a>
-
-            <a class="collapse-item" href="/api/hilih?kata=Yuda ganteng banget&apikey=MASUKAN_APIKEY" target="_blank">Kata Hilih</a>
-
-
-
-                        </ul>
-
-                     </li>
-
-
-
-                     <li class="dropdown">
-
-                        <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="dollar-sign"></i><span>Donasi</span></a>
-
-                        <ul class="dropdown-menu">
-
-                          <a class="collapse-item" href="https://" target="_blank">Saweria</a>
-
-                        </ul>
-
-                     </li>
-
-
-
-                     <li>
-
-
-
-                     <li class="menu-header">Support Me</li>
-
-
-                     </li>
-
-                     <li>
-
-                        <a href="https://youtube.com/c/ZEROBOT7" class="nav-link"><i data-feather="youtube"></i><span>Youtube</span></a>
-
-                     </li>
-
-                     <li>
-
-                        <a href="https://github.com/ZeroChanBot" class="nav-link"><i data-feather="github"></i><span>Github</span></a>
-
-                     </li>
-
-                  </ul>
-
-               </aside>
-
-            </div>
-
-            <!-- Main Content -->
-
-            <div class="main-content">
-
-               <section class="section">
-
-                  <ul class="breadcrumb breadcrumb-style">
-
-                     <li class="breadcrumb-item">
-
-                        <h4 class="page-title m-b-0">Dashboard</h4>
-
-                     </li>
-
-                     <li class="breadcrumb-item">
-
-                        <a href="/"><i data-feather="home"></i></a>
-
-                     </li>
-
-                     <li class="breadcrumb-item active">Home</li>
-
-                  </ul>
-
-                  <div class="row">
-
-                     <div class="col-lg-3 col-sm-6">
-
-                        <div class="card">
-
-                           <div class="card-statistic-4">
-
-                              <div class="info-box7-block">
-
-                                 <h6 class="m-b-20 text-right"> Total Hit</h6>
-
-				 <h4>
-
-                                 <i data-feather="battery"></i> <span id="visit"> 0 </span></h4>
-
-                                 <p class="mb-0 mt-3 text-muted"> Jumlah Request</p>
-
-                              </div>
-
-                           </div>
-
-                        </div>
-
-                     </div>
-
-                     <div class="col-lg-3 col-sm-6">
-
-                        <div class="card">
-
-                           <div class="card-statistic-4">
-
-                              <div class="info-box7-block">
-
-                                 <h6 class="m-b-20 text-right">Time Now</h6>
-
-				 <h4>
-
-                                 <i data-feather="clock"></i> <span id="browser_info"> 00.00 </span></h4>
-
-                                 <p class="mb-0 mt-3 text-muted"><span id="browser_sholat"></span></p>
-
-                              </div>
-
-                           </div>
-
-                        </div>
-
-                     </div>
-
-                     <div class="col-lg-3 col-sm-6">
-
-                        <div class="card">
-
-                           <div class="card-statistic-4">
-
-                              <div class="info-box7-block">
-
-                                 <h6 class="m-b-20 text-right">Alamat IP</h6>
-
-				 <h4>
-
-                                 <i data-feather="wifi"></i> <span id="ip"> 127.0.0.1 </span></h4>
-
-                                 <p class="mb-0 mt-3 text-muted">Your IP</p>
-
-                              </div>
-
-                           </div>
-
-                        </div>
-
-                     </div>
-
-		    </div>
-		    
-		       <!---Container Fluid-->
-
-                       <!-- Footer -->
-
-                        <form action="/api/cekapikey">
-
-                        <div class="col-xl-3 col-md-6 mb-4">
-
-                        <div class="card h-100">
-
-                        <div class="card-body">
-
-                       <div class="row align-items-center">
-
-                        <div class="col mr-2">
-
-                    <div class="h6 mb-0 font-weight-bold text-dark-800 text-uppercase">
-
-                    <h6 class="text-center">Cek Apikey</h6>
-
-                   </div>
-
-                 <input type="password" class="form-control" placeholder="Check" name="apikey" required=""><br>
-
-                <button class="btn btn-danger btn-icon-split">
-
-                <span class="icon text-white-50">
-
-                           <i class="fas fa-check"></i>
-
-                           </span>
-
-                           <span class="text">Check Apikey</span>
-
-                           </button>
-
-                    
-			  </div>
-
-                        </div>
-
-                     </div>
-
-                  </div>
-
-               </section>
-
-               <div class="settingSidebar">
-
-                  <a href="javascript:void(0)" class="settingPanelToggle"> <i data-feather="settings"></i> </a>
-
-                  <div class="settingSidebar-body ps-container ps-theme-default">
-
-                     <div class="fade show active">
-
-                        <div class="setting-panel-header">Setting Panel</div>
-
-                        <div class="p-15 border-bottom">
-
-                           <h6 class="font-medium m-b-10">Select Layout</h6>
-
-                           <div class="selectgroup layout-color w-50">
-
-                              <label class="selectgroup-item">
-
-                                 <input type="radio" name="value" value="1" class="selectgroup-input-radio select-layout" checked />
-
-                                 <span class="selectgroup-button">Light</span>
-
-                              </label>
-
-                              <label class="selectgroup-item">
-
-                                 <input type="radio" name="value" value="2" class="selectgroup-input-radio select-layout" />
-
-                                 <span class="selectgroup-button">Dark</span>
-
-                              </label>
-
-                           </div>
-
-                        </div>
-
-                        <div class="p-15 border-bottom">
-
-                           <h6 class="font-medium m-b-10">Sidebar Color</h6>
-
-                           <div class="selectgroup selectgroup-pills sidebar-color">
-
-                              <label class="selectgroup-item">
-
-                                 <input type="radio" name="icon-input" value="1" class="selectgroup-input select-sidebar" />
-
-                                 <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip" data-original-title="Light Sidebar"><i data-feather="sun"></i></span>
-
-                              </label>
-
-                              <label class="selectgroup-item">
-
-                                 <input type="radio" name="icon-input" value="2" class="selectgroup-input select-sidebar" checked />
-
-                                 <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip" data-original-title="Dark Sidebar"><i data-feather="moon"></i></span>
-
-                              </label>
-
-                           </div>
-
-                        </div>
-
-                        <div class="p-15 border-bottom">
-
-                           <h6 class="font-medium m-b-10">Color Theme</h6>
-
-                           <div class="theme-setting-options">
-
-                              <ul class="choose-theme list-unstyled mb-0">
-
-                                 <li title="white" class="active">
-
-                                    <div class="white"></div>
-
-                                 </li>
-
-                                 <li title="cyan">
-
-                                    <div class="cyan"></div>
-
-                                 </li>
-
-                                 <li title="black">
-
-                                    <div class="black"></div>
-
-                                 </li>
-
-                                 <li title="purple">
-
-                                    <div class="purple"></div>
-
-                                 </li>
-
-                                 <li title="orange">
-
-                                    <div class="orange"></div>
-
-                                 </li>
-
-                                 <li title="green">
-
-                                    <div class="green"></div>
-
-                                 </li>
-
-                                 <li title="red">
-
-                                    <div class="red"></div>
-
-                                 </li>
-
-                              </ul>
-
-                           </div>
-
-                        </div>
-
-                        <div class="p-15 border-bottom">
-
-                           <div class="theme-setting-options">
-
-                              <label class="m-b-0">
-
-                                 <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" id="mini_sidebar_setting" />
-
-                                 <span class="custom-switch-indicator"></span>
-
-                                 <span class="control-label p-l-10">Mini Sidebar</span>
-
-                              </label>
-
-                           </div>
-
-                        </div>
-
-                        <div class="p-15 border-bottom">
-
-                           <div class="theme-setting-options">
-
-                              <label class="m-b-0">
-
-                                 <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input" id="sticky_header_setting" />
-
-                                 <span class="custom-switch-indicator"></span>
-
-                                 <span class="control-label p-l-10">Sticky Header</span>
-
-                              </label>
-
-                           </div>
-
-                        </div>
-
-                        <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
-
-                           <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme"><i data-feather="refresh-cw"></i> Restore Default </a>
-
-                        </div>
-
-                     </div>
-
-                  </div>
-
-               </div>
-
-            </div>
-<div class="col-xl-3 col-md-6 mb-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h4 class="card-title text-center">Tic Tac Toe</h4>
-                    <h6 class="card-title text-center">Menang kan Untuk Mendapatkan Apikey</h6>
-                    <hr>
-          <div class="container1">
-        <div class="play-area">
-        </div>
-        <h21 class="text-center" id="winner"></h21>
-        <button1 onclick="reset_board()">ULANG</button1>
-    </div>
-    </div>
-    </div>
-    </div>
-    <!-- TICTACTOE -->
-      
-</script>
 <script>
-	const player = "O";
-const computer = "X";
+const player = "⭕";
+const computer = "❌";
 
 let board_full = false;
 let play_board = ["", "", "", "", "", "", "", "", ""];
@@ -1276,9 +1055,9 @@ const winner_statement = document.getElementById("winner");
 check_board_complete = () => {
   let flag = true;
   play_board.forEach(element => {
-    if (element != player && element != computer) {
-      flag = false;
-    }
+if (element != player && element != computer) {
+  flag = false;
+}
   });
   board_full = flag;
 };
@@ -1286,40 +1065,40 @@ check_board_complete = () => {
 
 const check_line = (a, b, c) => {
   return (
-    play_board[a] == play_board[b] &&
-    play_board[b] == play_board[c] &&
-    (play_board[a] == player || play_board[a] == computer)
+play_board[a] == play_board[b] &&
+play_board[b] == play_board[c] &&
+(play_board[a] == player || play_board[a] == computer)
   );
 };
 
 const check_match = () => {
   for (i = 0; i < 9; i += 3) {
-    if (check_line(i, i + 1, i + 2)) {
-      document.querySelector(`#block_${i}`).classList.add("win");
-      document.querySelector(`#block_${i + 1}`).classList.add("win");
-      document.querySelector(`#block_${i + 2}`).classList.add("win");
-      return play_board[i];
-    }
+if (check_line(i, i + 1, i + 2)) {
+  document.querySelector(`#block_${i}`).classList.add("win");
+  document.querySelector(`#block_${i + 1}`).classList.add("win");
+  document.querySelector(`#block_${i + 2}`).classList.add("win");
+  return play_board[i];
+}
   }
   for (i = 0; i < 3; i++) {
-    if (check_line(i, i + 3, i + 6)) {
-      document.querySelector(`#block_${i}`).classList.add("win");
-      document.querySelector(`#block_${i + 3}`).classList.add("win");
-      document.querySelector(`#block_${i + 6}`).classList.add("win");
-      return play_board[i];
-    }
+if (check_line(i, i + 3, i + 6)) {
+  document.querySelector(`#block_${i}`).classList.add("win");
+  document.querySelector(`#block_${i + 3}`).classList.add("win");
+  document.querySelector(`#block_${i + 6}`).classList.add("win");
+  return play_board[i];
+}
   }
   if (check_line(0, 4, 8)) {
-    document.querySelector("#block_0").classList.add("win");
-    document.querySelector("#block_4").classList.add("win");
-    document.querySelector("#block_8").classList.add("win");
-    return play_board[0];
+document.querySelector("#block_0").classList.add("win");
+document.querySelector("#block_4").classList.add("win");
+document.querySelector("#block_8").classList.add("win");
+return play_board[0];
   }
   if (check_line(2, 4, 6)) {
-    document.querySelector("#block_2").classList.add("win");
-    document.querySelector("#block_4").classList.add("win");
-    document.querySelector("#block_6").classList.add("win");
-    return play_board[2];
+document.querySelector("#block_2").classList.add("win");
+document.querySelector("#block_4").classList.add("win");
+document.querySelector("#block_6").classList.add("win");
+return play_board[2];
   }
   return "";
 };
@@ -1327,16 +1106,16 @@ const check_match = () => {
 const check_for_winner = () => {
   let res = check_match()
   if (res == player) {
-    winner.innerText = "Kamu Menang Dan Apikeynya : RakuGans";
-    winner.classList.add("playerWin");
-    board_full = true
+winner.innerText = "KAMU MENANG";
+winner.classList.add("playerWin");
+board_full = true
   } else if (res == computer) {
-    winner.innerText = "Yah Kalah Kamu Tidak Mendapatkan Apikey:(";
-    winner.classList.add("computerWin");
-    board_full = true
+winner.innerText = "KAMU KALAH";
+winner.classList.add("computerWin");
+board_full = true
   } else if (board_full) {
-    winner.innerText = "Draw!";
-    winner.classList.add("draw");
+winner.innerText = "DRAW";
+winner.classList.add("draw");
   }
 };
 
@@ -1344,10 +1123,10 @@ const check_for_winner = () => {
 const render_board = () => {
   board_container.innerHTML = ""
   play_board.forEach((e, i) => {
-    board_container.innerHTML += `<div id="block_${i}" class="block" onclick="addPlayerMove(${i})">${play_board[i]}</div>`
-    if (e == player || e == computer) {
-      document.querySelector(`#block_${i}`).classList.add("occupied");
-    }
+board_container.innerHTML += `<div id="block_${i}" class="block" onclick="addPlayerMove(${i})">${play_board[i]}</div>`
+if (e == player || e == computer) {
+  document.querySelector(`#block_${i}`).classList.add("occupied");
+}
   });
 };
 
@@ -1359,19 +1138,19 @@ const game_loop = () => {
 
 const addPlayerMove = e => {
   if (!board_full && play_board[e] == "") {
-    play_board[e] = player;
-    game_loop();
-    addComputerMove();
+play_board[e] = player;
+game_loop();
+addComputerMove();
   }
 };
 
 const addComputerMove = () => {
   if (!board_full) {
-    do {
-      selected = Math.floor(Math.random() * 9);
-    } while (play_board[selected] != "");
-    play_board[selected] = computer;
-    game_loop();
+do {
+  selected = Math.floor(Math.random() * 9);
+} while (play_board[selected] != "");
+play_board[selected] = computer;
+game_loop();
   }
 };
 
@@ -1388,50 +1167,90 @@ const reset_board = () => {
 //initial render
 render_board();
 </script>
-            <footer class="main-footer">
 
-               <div class="footer-left">
-
-                  Copyright - 2021
-
-                  <div class="bullet"></div>
-
- Made With By<a href="https://wa.me/6287834993722">Raku Gans</a>
-
-               </div>
-
-               <div class="footer-right"></div>
-
-            </footer>
-      <!-- Footer -->
-    </div>
+  <div class="container my-auto">
+  <div class="copyright text-center my-auto">
+<span>Copyright &copy; 2021 - Developer By
+  <b>RakuGans</b>
+</span>
   </div>
-    <audio autoplay="true" src="https://d.top4top.io/m_2068633xv0.mp3"></audio>
+</div>
+  </div>
+  </footer>
+  <!-- Footer -->
+</div>
+  </div>
+<audio autoplay="true" src="https://anonfiles.com/fas0j8J6u7/1632373930475_mp3"></audio>
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+<i class="fas fa-angle-up"></i>
+  </a>
+  <script async src="https://api.countapi.xyz/hit/zerochanbot.herokuapp.com/visits?callback=cb"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/ruang-admin.js"></script>
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>  
+</body>
+<script type="text/javascript">
+// 1 detik = 1000
+window.setTimeout("waktu()",1000);  
+function waktu() {   
+var tanggal = new Date();  
+setTimeout("waktu()",1000);  
+document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMinutes()+":"+tanggal.getSeconds();
+}
+var batteryLevel = document.getElementById("batteryLevel");
+			
+var styleBatteryLevel = batteryLevel.style;
+			
+var percentageLevel = document.getElementById("percentageLevel");
+			
+navigator.getBattery().then(function(battery) {
+				
 
-         </div>
+			
+function updateAllBatteryInfo(){
+			
+updateLevelInfo();
+			
+}
+			
+updateAllBatteryInfo();
+			
+battery.addEventListener('levelchange',      function(){
+			
+setInterval(function(){
+			
+updateLevelInfo()
+			
+},1000);
+			
+});
+			
 
-      </div>
-      
+			
+function updateLevelInfo(){
+			
+var numBattery = battery.level * 100;
+			
+percentageLevel.textContent=Math.round(numBattery) + "%";
+			
+styleBatteryLevel.height=numBattery + "%";
+			
+if(numBattery<=15) {
+			
+styleBatteryLevel.background="red";
+			
+}
+			
+};
+			
+});
 
-      <!--Chat Weee-->
-
-      <script src="https://chatwee-api.com/v2/script/6069e43c514d04375e2f3042.js"></script>
-
-      <!-- General JS Scripts -->
-
-      <script src="https://h4ck3rs404-api.herokuapp.com/assets/js/app.min.js"></script>
-
-      <!-- Template JS File -->
-
-      <script src="https://h4ck3rs404-api.herokuapp.com/assets/js/scripts.js"></script>
-
+</script>
+<script src="https://h4ck3rs404-api.herokuapp.com/assets/js/scripts.js"></script>
       <script src="https://h4ck3rs404-api.herokuapp.com/assets/js/fahmi.js"></script>
-
-      <!-- Custom JS File -->
-
-      <script src="https://h4ck3rs404-api.herokuapp.com/assets/js/custom.js"></script>
-      
-      
-   </body>
-
+<script src="https://chatwee-api.com/v2/script/6069e43c514d04375e2f3042.js"></script>
 </html>
